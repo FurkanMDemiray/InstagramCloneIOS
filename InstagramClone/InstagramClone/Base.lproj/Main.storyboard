@@ -11,7 +11,7 @@
         <!--Upload-->
         <scene sceneID="6cU-SU-44h">
             <objects>
-                <viewController id="Q43-Yt-TbD" sceneMemberID="viewController">
+                <viewController id="Q43-Yt-TbD" customClass="UploadViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pw-MR-Azf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,12 +22,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jT9-7u-axt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1938" y="229"/>
+            <point key="canvasLocation" x="1937" y="303"/>
         </scene>
         <!--Feed-->
         <scene sceneID="fJN-rl-Qiq">
             <objects>
-                <viewController id="aEg-R5-WGc" sceneMemberID="viewController">
+                <viewController id="aEg-R5-WGc" customClass="FeedViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1T4-eQ-kTV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,10 +40,40 @@
             </objects>
             <point key="canvasLocation" x="1938" y="-379"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="hX2-38-4cp">
+            <objects>
+                <viewController id="2wr-Pc-etw" customClass="SettingsViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BRd-3J-Bph">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vX2-8k-HzZ">
+                                <rect key="frame" x="135" y="387" width="123" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutBtn:" destination="2wr-Pc-etw" eventType="touchUpInside" id="C1l-j4-wbl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d38-PU-maQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="s.circle.fill" catalog="system" id="BTs-5V-LVW"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toMainVC" modalPresentationStyle="fullScreen" id="12l-QG-qSw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buh-9U-EDH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2701.5267175572517" y="-45.070422535211272"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="468-51-Mz1">
             <objects>
-                <tabBarController id="Wkx-vX-Qcy" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="Wkx-vX-Qcy" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="3au-A6-ZtV"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="B1l-zs-clK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -53,6 +83,7 @@
                     <connections>
                         <segue destination="aEg-R5-WGc" kind="relationship" relationship="viewControllers" id="Euj-Gm-OZT"/>
                         <segue destination="Q43-Yt-TbD" kind="relationship" relationship="viewControllers" id="3ZH-Kd-p4e"/>
+                        <segue destination="2wr-Pc-etw" kind="relationship" relationship="viewControllers" id="c4l-WX-Ywh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84d-S7-fK9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -68,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0t-ST-w24">
-                                <rect key="frame" x="41" y="272" width="111" height="48"/>
+                                <rect key="frame" x="41" y="306" width="111" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="3oI-fA-x2J"/>
                                 </constraints>
@@ -143,6 +174,7 @@
     </scenes>
     <resources>
         <image name="f.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="s.circle.fill" catalog="system" width="128" height="123"/>
         <image name="u.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
