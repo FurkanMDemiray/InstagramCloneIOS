@@ -16,11 +16,11 @@
 		DDBC59C82AF82CA4009C30DB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC59C72AF82CA4009C30DB /* FirebaseAnalytics */; };
 		DDBC59D42AF82CA4009C30DB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC59D32AF82CA4009C30DB /* FirebaseAuth */; };
 		DDBC59E02AF82CA4009C30DB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC59DF2AF82CA4009C30DB /* FirebaseFirestore */; };
-		DDBC59FA2AF82CA4009C30DB /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC59F92AF82CA4009C30DB /* FirebaseStorage */; };
 		DDBC59FE2AF8301F009C30DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDBC59FD2AF8301F009C30DB /* GoogleService-Info.plist */; };
 		DDBC5A002AF8DC65009C30DB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC59FF2AF8DC65009C30DB /* FeedViewController.swift */; };
 		DDBC5A022AF8DC70009C30DB /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5A012AF8DC70009C30DB /* UploadViewController.swift */; };
 		DDBC5A042AF8DC79009C30DB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5A032AF8DC79009C30DB /* SettingsViewController.swift */; };
+		DDBC5A072AFAD850009C30DB /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC5A062AFAD850009C30DB /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +44,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDBC59E02AF82CA4009C30DB /* FirebaseFirestore in Frameworks */,
+				DDBC5A072AFAD850009C30DB /* FirebaseStorage in Frameworks */,
 				DDBC59C82AF82CA4009C30DB /* FirebaseAnalytics in Frameworks */,
 				DDBC59D42AF82CA4009C30DB /* FirebaseAuth in Frameworks */,
-				DDBC59FA2AF82CA4009C30DB /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +58,7 @@
 			children = (
 				DDBC59B12AF82B02009C30DB /* InstagramClone */,
 				DDBC59B02AF82B02009C30DB /* Products */,
+				DDBC5A052AFAD850009C30DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +88,13 @@
 			path = InstagramClone;
 			sourceTree = "<group>";
 		};
+		DDBC5A052AFAD850009C30DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,7 +115,7 @@
 				DDBC59C72AF82CA4009C30DB /* FirebaseAnalytics */,
 				DDBC59D32AF82CA4009C30DB /* FirebaseAuth */,
 				DDBC59DF2AF82CA4009C30DB /* FirebaseFirestore */,
-				DDBC59F92AF82CA4009C30DB /* FirebaseStorage */,
+				DDBC5A062AFAD850009C30DB /* FirebaseStorage */,
 			);
 			productName = InstagramClone;
 			productReference = DDBC59AF2AF82B02009C30DB /* InstagramClone.app */;
@@ -422,7 +430,7 @@
 			package = DDBC59C62AF82CA4009C30DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		DDBC59F92AF82CA4009C30DB /* FirebaseStorage */ = {
+		DDBC5A062AFAD850009C30DB /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DDBC59C62AF82CA4009C30DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
