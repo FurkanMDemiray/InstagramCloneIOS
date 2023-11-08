@@ -28,10 +28,20 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate & 
 
     }
 
+    func makeAlert(title: String, message: String) {
+
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alertController.addAction(okButton)
+        self.present(alertController, animated: true, completion: nil)
+    }
+
 
     @IBAction func uploadBtnAction(_ sender: Any) {
 
-        print("tıklandı upload button")
+
+        let name = UUID().uuidString
+
         let storage = Storage.storage()
         let storageRef = storage.reference()
 
@@ -39,11 +49,11 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate & 
 
         if let data = imageView.image?.jpegData(compressionQuality: 0.5) {
 
-            let imageReference = mediaFolder.child("image.jpg")
+            let imageReference = mediaFolder.child("\(name).jpg")
             imageReference.putData(data) { metaData, error in
 
                 if let err = error {
-                    print(err.localizedDescription)
+                    self.makeAlert(title: "Error", message: err.localizedDescription)
                 } else {
                     imageReference.downloadURL { url, error in
 
@@ -52,16 +62,33 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate & 
                                 print(imageUrl)
                             }
 
+
+                            let firestoreDatabase = Firestore.firestore()
+                            var firestoreReference: DocumentReference? = nil
+
+                            let firestorePost = ["imageUrl": url?.absoluteString, "postedBy": Auth.auth().currentUser!.email!, "postComment": self.nameField.text!, "date": FieldValue.serverTimestamp(), "likes": 0] as [String: Any]
+
+                            firestoreReference = firestoreDatabase.collection("Posts").addDocument(data: firestorePost, completion: { error in
+
+                                if let err = error {
+
+                                    self.makeAlert(title: "Error", message: err.localizedDescription)
+                                }
+                                else {
+
+                                    self.tabBarController?.selectedIndex = 0
+                                    print("Success")
+
+                                }
+                            })
+
+
                         }
                     }
                 }
 
             }
         }
-
-
-
-
 
 
     }
