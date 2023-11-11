@@ -22,27 +22,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
 
+
         feedTableView.delegate = self
         feedTableView.dataSource = self
 
         getData()
-    }
-
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userEmailArray.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedCell
-
-        cell.commentLabel.text = userCommentArray[indexPath.row]
-        cell.likeLabel.text = String(likeArray[indexPath.row])
-        cell.userImageView.image = UIImage(named: "user.png")
-        cell.userMail.text = userEmailArray[indexPath.row]
-
-        return cell
     }
 
     func getData() {
@@ -62,7 +46,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
                     for document in snapShot!.documents {
 
-                        let id = document.documentID
+                        //let id = document.documentID
 
                         if let postedBy = document.get("postedBy") as? String {
                             print(postedBy)
@@ -78,17 +62,35 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                         }
                         if let imageUrl = document.get("imageUrl") as? String {
                             print(imageUrl)
-                            let url = URL(string: imageUrl)
                             self.userImageArray.append(imageUrl)
                         }
                     }
                 }
-
+                self.feedTableView.reloadData()
 
             }
         }
 
 
+    }
+
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Array index : ", userEmailArray.count)
+        return userEmailArray.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedCell
+
+        cell.userMail.text = userEmailArray[indexPath.row]
+        cell.commentLabel.text = userCommentArray[indexPath.row]
+        cell.likeLabel.text = String(likeArray[indexPath.row])
+        cell.userImageView.image = UIImage(named: "Homer.png")
+
+
+        return cell
     }
 
 
