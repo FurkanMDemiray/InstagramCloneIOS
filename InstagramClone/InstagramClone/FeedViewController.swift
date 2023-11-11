@@ -8,6 +8,8 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import SDWebImage
+
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -28,6 +30,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         getData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
 
     func getData() {
 
@@ -43,6 +49,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             else {
 
                 if snapShot?.isEmpty == false {
+
+                    self.userEmailArray.removeAll(keepingCapacity: false)
+                    self.userCommentArray.removeAll(keepingCapacity: false)
+                    self.likeArray.removeAll(keepingCapacity: false)
+                    self.userImageArray.removeAll(keepingCapacity: false)
 
                     for document in snapShot!.documents {
 
@@ -71,7 +82,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
 
-
     }
 
 
@@ -87,7 +97,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.userMail.text = userEmailArray[indexPath.row]
         cell.commentLabel.text = userCommentArray[indexPath.row]
         cell.likeLabel.text = String(likeArray[indexPath.row])
-        cell.userImageView.image = UIImage(named: "Homer.png")
+        cell.userImageView.sd_setImage(with: URL(string: self.userImageArray[indexPath.row]))
 
 
         return cell
