@@ -21,6 +21,7 @@
 		DDBC5A022AF8DC70009C30DB /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5A012AF8DC70009C30DB /* UploadViewController.swift */; };
 		DDBC5A042AF8DC79009C30DB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5A032AF8DC79009C30DB /* SettingsViewController.swift */; };
 		DDBC5A072AFAD850009C30DB /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DDBC5A062AFAD850009C30DB /* FirebaseStorage */; };
+		DDBC5A092AFFBE2A009C30DB /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBC5A082AFFBE2A009C30DB /* FeedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DDBC59FF2AF8DC65009C30DB /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DDBC5A012AF8DC70009C30DB /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		DDBC5A032AF8DC79009C30DB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		DDBC5A082AFFBE2A009C30DB /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				DDBC59FF2AF8DC65009C30DB /* FeedViewController.swift */,
 				DDBC5A012AF8DC70009C30DB /* UploadViewController.swift */,
 				DDBC5A032AF8DC79009C30DB /* SettingsViewController.swift */,
+				DDBC5A082AFFBE2A009C30DB /* FeedCell.swift */,
 			);
 			path = InstagramClone;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDBC5A092AFFBE2A009C30DB /* FeedCell.swift in Sources */,
 				DDBC59B72AF82B02009C30DB /* ViewController.swift in Sources */,
 				DDBC5A022AF8DC70009C30DB /* UploadViewController.swift in Sources */,
 				DDBC59B32AF82B02009C30DB /* AppDelegate.swift in Sources */,
