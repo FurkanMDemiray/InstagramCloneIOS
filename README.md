@@ -11,9 +11,12 @@ Additionally, I ensured that the images, comments, and like information of the p
 # SDWebImage
 
 I have used SDWebImage as a async image downloader for images that are shown in posts.
+
+
+
   
-<img src="InstagramClone/start.png" width=25% height=25%)>
+<img src="InstagramClone/InstagramClone/start.png" width=25% height=25%)>
 
-<img src="InstagramClone/upload.png" width=25% height=25%)>
+<img src="InstagramClone/InstagramClone/upload.png" width=25% height=25%)>
 
-<img src="InstagramClone/feed.png" width=25% height=25%)>
+<img src="InstagramClone/InstagramClone/feed.png" width=25% height=25%)>
